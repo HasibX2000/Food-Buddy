@@ -57,7 +57,7 @@ export default function MenuItemForm({ isOpen, onClose, item, categories }) {
   };
 
   const inputClasses =
-    "mt-1 block w-full rounded-md bg-gray-50 border-0 text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm p-2 focus-visible:outline-none";
+    "mt-1 block w-full rounded-md bg-dark-50 border-0 text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm p-2 focus-visible:outline-none";
 
   return (
     <Transition.Root show={isOpen} as={Fragment}>
@@ -71,7 +71,7 @@ export default function MenuItemForm({ isOpen, onClose, item, categories }) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+          <div className="fixed inset-0 bg-dark-500 bg-opacity-75 transition-opacity" />
         </Transition.Child>
 
         <div className="fixed inset-0 z-50 overflow-y-auto">
@@ -209,13 +209,13 @@ export default function MenuItemForm({ isOpen, onClose, item, categories }) {
                       <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
                         <button
                           type="submit"
-                          className="inline-flex w-full justify-center rounded-md bg-primary-600 px-3 py-2 text-sm font-semibold text-white hover:bg-primary-500 transition-colors duration-200 sm:ml-3 sm:w-auto"
+                          className="inline-flex w-full justify-center rounded-md bg-primary-400 px-3 py-2 text-sm font-semibold text-white hover:bg-primary-500 transition-colors duration-200 sm:ml-3 sm:w-auto"
                         >
                           {item ? "Update" : "Create"}
                         </button>
                         <button
                           type="button"
-                          className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200 sm:mt-0 sm:w-auto"
+                          className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-dark-50 transition-colors duration-200 sm:mt-0 sm:w-auto"
                           onClick={handleClose}
                         >
                           Cancel

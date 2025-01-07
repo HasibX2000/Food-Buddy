@@ -73,7 +73,7 @@ export default function Menu() {
           </div>
           <button
             onClick={() => setIsFormOpen(true)}
-            className="mt-4 sm:mt-0 inline-flex items-center px-4 py-2 bg-gray-700 rounded-md text-sm font-medium text-white hover:bg-gray-900 transition-colors duration-200"
+            className="mt-4 sm:mt-0 inline-flex items-center px-4 py-2 bg-primary-400 rounded-md text-sm font-medium text-white hover:bg-primary-500 transition-colors duration-200"
           >
             <PlusIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
             Add New Item
@@ -91,7 +91,7 @@ export default function Menu() {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="pl-10 block w-full rounded-lg border-gray-200 text-sm text-gray-900 bg-gray-50 hover:bg-gray-50/80 transition-colors duration-200 p-2 focus-visible:outline-none"
+              className="pl-10 block w-full rounded-lg border-gray-200 text-sm text-gray-900 bg-dark-50 hover:bg-dark-50/80 transition-colors duration-200 p-2 focus-visible:outline-none"
             >
               <option value="all">All Categories</option>
               {DUMMY_CATEGORIES.map((category) => (
@@ -110,7 +110,7 @@ export default function Menu() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search menu items..."
-              className="pl-10 block w-full rounded-lg border-gray-200 text-sm text-gray-900 bg-gray-50 hover:bg-gray-50/80 transition-colors duration-200 p-2 focus-visible:outline-none"
+              className="pl-10 block w-full rounded-lg border-gray-200 text-sm text-gray-900 bg-dark-50 hover:bg-dark-50/80 transition-colors duration-200 p-2 focus-visible:outline-none"
             />
           </div>
         </div>

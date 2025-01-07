@@ -61,7 +61,7 @@ export default function MenuItemCard({ item, category }) {
           <div className="mt-4 flex justify-end space-x-2 border-t pt-4">
             <button
               onClick={() => setIsEditing(true)}
-              className="inline-flex items-center px-3 py-1.5 text-xs font-medium rounded bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors duration-200"
+              className="inline-flex items-center px-3 py-1.5 text-xs font-medium rounded bg-dark-100 text-gray-700 hover:bg-dark-200 transition-colors duration-200"
             >
               <PencilIcon className="h-4 w-4 mr-1" />
               Edit

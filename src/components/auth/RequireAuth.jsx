@@ -1,17 +1,27 @@
-import { Navigate, useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { selectCurrentSession, selectAuthStatus } from "../../features/auth/authSlice";
+import { useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { checkAuth } from "../../features/auth/authActions";
 
 export default function RequireAuth({ children }) {
-  const session = useSelector(selectCurrentSession);
-  const status = useSelector(selectAuthStatus);
+  const navigate = useNavigate();
   const location = useLocation();
+  const dispatch = useDispatch();
+  const { isAuthenticated, loading } = useSelector((state) => state.auth);
 
-  // Don't show loading spinner here since App.jsx handles initial load
-  // Only redirect if we've finished checking auth and there's no session
-  if (status !== "idle" && !session) {
-    return <Navigate to="/login" state={{ from: location }} replace />;
+  useEffect(() => {
+    dispatch(checkAuth());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (!loading && !isAuthenticated) {
+      navigate("/login", { state: { from: location } });
+    }
+  }, [loading, isAuthenticated, navigate, location]);
+
+  if (loading) {
+    return <div>Loading...</div>; // Or your loading component
   }
 
-  return children;
+  return isAuthenticated ? children : null;
 }

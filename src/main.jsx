@@ -7,20 +7,25 @@ import App from "./App";
 import "./index.css";
 import RequireAuth from "./components/auth/RequireAuth";
 import DashboardLayout from "./components/layout/DashboardLayout";
-import Dashboard, { loader as dashboardLoader } from "./pages/Dashboard";
+import Dashboard from "./pages/Dashboard";
 import Menu from "./pages/Menu";
 import Orders from "./pages/Orders";
-import LoginForm, { action as loginAction } from "./features/auth/LoginForm";
+import Reservations from "./pages/Reservations";
+import Analytics from "./pages/Analytics";
+import Customers from "./pages/Customers";
+import Settings from "./pages/Settings";
+import LoginForm from "./features/auth/LoginForm";
+import ErrorBoundary from "./components/common/ErrorBoundary";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorBoundary />,
     children: [
       {
         path: "login",
         element: <LoginForm />,
-        action: loginAction,
       },
       {
         path: "/",
@@ -33,7 +38,6 @@ const router = createBrowserRouter([
           {
             path: "",
             element: <Dashboard />,
-            loader: dashboardLoader,
           },
           {
             path: "menu",
@@ -42,6 +46,22 @@ const router = createBrowserRouter([
           {
             path: "orders",
             element: <Orders />,
+          },
+          {
+            path: "reservations",
+            element: <Reservations />,
+          },
+          {
+            path: "analytics",
+            element: <Analytics />,
+          },
+          {
+            path: "customers",
+            element: <Customers />,
+          },
+          {
+            path: "settings",
+            element: <Settings />,
           },
         ],
       },
